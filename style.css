@@ -1,0 +1,28 @@
+/* Add this CSS to your existing stylesheet or create a new one */
+
+.invoices-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .invoice {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33.33% - 20px); /* Adjust width as needed */
+    box-sizing: border-box;
+  }
+  
+  .info {
+    margin-bottom: 10px;
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .value {
+    margin-left: 10px;
+  }
+  

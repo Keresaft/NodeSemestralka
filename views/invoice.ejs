@@ -1,0 +1,40 @@
+<%- include('_header') %>
+
+<h1>Invoice</h1>
+
+<form action="/update-invoice/<%= invoice.id %>" method="post">
+  <label for="amount">Amount:</label>
+  <input type="number" id="amount" name="amount" value="<%= invoice.amount %>" required><br>
+
+  <label for="invoice_date">Invoice Date:</label>
+  <input type="date" id="invoice_date" name="invoice_date" value="<%= invoice.invoice_date %>" required><br>
+
+  <label for="due_date">Due Date:</label>
+  <input type="date" id="due_date" name="due_date" value="<%= invoice.due_date %>" required><br>
+
+  <label for="status">Status:</label>
+  <select id="status" name="status" required>
+    <option value="pending" <%= invoice.status === 'pending' ? 'selected' : '' %>>Pending</option>
+    <option value="paid" <%= invoice.status === 'paid' ? 'selected' : '' %>>Paid</option>
+    <option value="overdue" <%= invoice.status === 'overdue' ? 'selected' : '' %>>Overdue</option>
+  </select><br>
+
+  <label for="invoice_text">Invoice Text:</label>
+  <textarea id="invoice_text" name="invoice_text"><%= invoice.invoice_text %></textarea><br>
+
+  <button type="submit">Update Invoice</button>
+</form>
+
+<hr>
+
+<div>
+  <p><strong>Customer ICO:</strong> <%= invoice.customer_ico %></p>
+  <p><strong>Customer Name:</strong> <%= invoice.customer_name %></p>
+  <p><strong>Customer Email:</strong> <%= invoice.customer_email %></p>
+  <p><strong>Customer Phone:</strong> <%= invoice.customer_phone %></p>
+  <p><strong>Customer Address:</strong> <%= invoice.customer_address %></p>
+</div>
+
+<a href="/">Back to Invoices</a>
+
+<%- include('_footer') %>
